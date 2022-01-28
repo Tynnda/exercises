@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        function oldschool() {
+
+
+        }
+        var names = ['Martin', 'Arthur'];
+
+        names[4] = 'Joe';
+
+        names.unshift('Bob', 'Steve');
+
+        console.log(names[4]);
+        console.log(names);
+
+        console.log(names.length);
+
+        for (let i = 0; i < names.length; i++) {
+
+            if (names[i] === 'Jane') {
+                continue;
+            }
+
+            if (names[i] === 'Eve') {
+                break;
+            }
+
+            console.log(names[ i ]);
+        }
+
+
+        names.forEach(
+
+            (current_value, current_index) => {
+
+                console.log(`The index of ${current_value} is ${current_index}`);
+
+                console.log('The index of ' + current_value + ' is ' + current_index);
+
+            }
+
+        )
+
+        // find out if all the names are male names
+        const they_are = names.every(name => {
+            return name !== 'Jane' && name !== 'Eve';
+        })
+
+        console.log(they_are);
+
+        // examples:
+
+        let paragraphs = document.querySelectorAll('p');
+        let filtered = [];
+        for (let i = 0; i < paragraphs.length; i++) {
+            if (p.getAttribute('class') == 'main') {
+                filtered.push(paragraphs[i]);
+            }
+        }
+
+        let filtered2 = Array.from(document.querySelectorAll('p')).filter(() => {
+            return p.getAttribute('class') == 'main'
+        })
+
+
+
+
+    </script>
+</body>
+</html>
