@@ -1,20 +1,18 @@
-import messageList from'./conversation.json';
+import { Conversation } from './Conversation.js';
+import { Message } from './Message.js';
+import messageDataList from'./conversation.json';
 
 document.addEventListener('DOMContentLoaded', () => {
   const target = document.querySelector('.conversation');
 
-  messageList.forEach((message, index) => {
-    setTimeout(() => showMessage(message), index * 500);
-  });
+  const conversation = new Conversation(target);
 
-  const showMessage = (message) => {
-    target.innerHTML += `
-        <div class="message message--${message.side}">
-            <div class="message__text">
-                ${message.text}
-            </div>
-        </div>
-    `;
-  };
+  messageDataList.forEach((messageData, index) => {
+    setTimeout(() => {
+      const message = new Message(messageData.side, messageData.name, messageData.text);
+
+      conversation.addMessage(message.messageElement);
+    }, index * 500);
+  });
 });
 
