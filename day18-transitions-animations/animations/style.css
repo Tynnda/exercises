@@ -1,0 +1,47 @@
+.box {
+    width: 10em;
+    height: 10em;
+    background-color: red;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* initial style */
+    position: relative;
+    left: 0px;
+
+    /* transition: all 2s ease; */
+}
+
+.box.changed {
+    /* style after change */
+    animation-name: my_change;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes my_change {
+
+    0% {
+        left: 0px;
+        background-color: red;
+        color: white;
+        width: 10em;
+        height: 10em;
+    }
+
+    25%, 75% {
+        background-color: green;
+    }
+
+    100% {
+        left: 200px;
+        background-color: orange;
+        color: black;
+        width: 5em;
+        height: 20em;
+    }
+}
