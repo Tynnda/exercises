@@ -1,0 +1,12 @@
+.author {
+    display: flex;
+}
+
+.author__image {
+    margin-right: 1em;
+    padding-top: 1.5em;
+}
+
+.author__image img {
+    width: 10em;
+}
