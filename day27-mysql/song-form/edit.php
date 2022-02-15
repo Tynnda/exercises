@@ -5,7 +5,11 @@
 // display a form to edit an existing song
 
 require_once 'DBBlackbox.php';
+require_once 'Session.php';
 require_once 'Song.php';
+require_once 'helpers.php';
+
+$session = Session::instance();
 
 // get id of the song to edit from the URL
 $id = $_GET['id'];
@@ -37,6 +41,24 @@ $genres = [
 </head>
 <body>
 
+    <?php if ($message = Session::instance()->get('success_message')) : ?>
+
+        <div class="message success-message">
+            <?= $message ?>
+        </div>
+
+    <?php endif; ?>
+
+    <?php if ($errors = Session::instance()->get('errors')) : ?>
+        <?php foreach ($errors as $error) : ?>
+
+            <div class="message error-message">
+                <?= $error ?>
+            </div>
+
+        <?php endforeach; ?>
+    <?php endif; ?>
+
     <form action="update.php?id=<?= $song->id ?>" method="post">
 
         <div class="form-group">
@@ -44,7 +66,7 @@ $genres = [
             <input
                 type="text"
                 name="title"
-                value="<?= $song->title ?>"
+                value="<?= old('title', $song->title) ?>"
             >
         </div>
 
@@ -53,7 +75,7 @@ $genres = [
             <input
                 type="text"
                 name="author_name"
-                value="<?= $song->author_name ?>"
+                value="<?= old('author_name', $song->author_name) ?>"
             >
         </div>
 
@@ -73,7 +95,7 @@ $genres = [
 
                     <option
                         value="<?= $value ?>"
-                        <?= $song->genre === $value ? ' selected' : '' ?>
+                        <?= old('genre', $song->genre) === $value ? ' selected' : '' ?>
                     >
                         <?= $name ?>
                     </option>
@@ -88,6 +110,14 @@ $genres = [
         </div>
 
     </form>
+
+    <!-- <script>
+        document.querySelectorAll('.message').forEach(message => {
+            setTimeout(() => {
+                message.remove();
+            }, 2000)
+        })
+    </script> -->
 
 </body>
 </html>

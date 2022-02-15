@@ -55,3 +55,17 @@ form {
     font-size: 0.75em;
     font-style: italic;
 }
+
+.success-message {
+    background-color: rgb(210, 255, 210);
+    border: 1px solid green;
+    padding: 0.5em;
+    margin-bottom: 1em;
+}
+
+.error-message {
+    background-color: rgb(255, 208, 208);
+    border: 1px solid red;
+    padding: 0.5em;
+    margin-bottom: 1em;
+}

@@ -36,7 +36,7 @@ $genres = [
             <input
                 type="text"
                 name="title"
-                value="<?= $song->title ?>"
+                value="<?= old('title', $song->title) ?>"
             >
         </div>
 
@@ -45,7 +45,7 @@ $genres = [
             <input
                 type="text"
                 name="author_name"
-                value="<?= $song->author_name ?>"
+                value="<?= old('author_name', $song->author_name) ?>"
             >
         </div>
 
@@ -65,7 +65,7 @@ $genres = [
 
                     <option
                         value="<?= $value ?>"
-                        <?= $song->genre === $value ? ' selected' : '' ?>
+                        <?= old('genre', $song->genre) === $value ? ' selected' : '' ?>
                     >
                         <?= $name ?>
                     </option>
