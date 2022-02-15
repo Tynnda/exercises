@@ -3,6 +3,7 @@
 // display a form to create a new Song
 
 require_once 'Song.php';
+require_once 'helpers.php';
 
 // prepare empty data
 $song = new Song;
@@ -11,6 +12,7 @@ $genres = [
     'bluegrass' => 'Bluegrass',
     'country'   => 'Country',
     'metal'     => 'Metal',
+    'heavy-metal'  => 'Heavy Metal &lt;3',
     'pop'       => 'Pop',
     'rock'      => 'Rock',
     'techno'    => 'Techno'
@@ -28,6 +30,8 @@ $genres = [
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <?php include 'messages.php'; ?>
 
     <form action="store.php" method="post">
 

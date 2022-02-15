@@ -3,6 +3,7 @@
 // index of all songs in our database
 
 require_once 'DBBlackbox.php';
+require_once 'Session.php';
 require_once 'Song.php';
 
 $songs = select(null, null, 'Song');
@@ -29,6 +30,8 @@ $genres = [
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <?php include 'messages.php'; ?>
 
     <div class="songs-list">
 
