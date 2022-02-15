@@ -1,0 +1,57 @@
+html {
+    font-family: sans-serif;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group select {
+    border: 1px solid silver;
+    border-radius: 0.125em;
+    padding: 0.5em;
+}
+
+.submit-button {
+    background-color: green;
+    color: white;
+    border: 0;
+    border-radius: 0.125em;
+    padding: 0.5em;
+    margin-top: 0.5em;
+}
+
+.songs-list {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.song-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.song-item__title {
+    font-weight: 600;
+    font-size: 1.25em;
+}
+
+.song-item__genre {
+    font-size: 0.75em;
+    font-style: italic;
+}
